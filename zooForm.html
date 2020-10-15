@@ -1,0 +1,168 @@
+<html>
+	<head>
+	<!--Author: Stephen McGuire	
+    	Example code containing a variety of form elements
+    	Dated Created: 01/29/2018
+    	Date Modified: 01/29/2018 if applicable (specify reason for mods)
+    	Course: CSIT 2347
+	-->
+		<title>
+			Zoo Volunteer Interest Form
+		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body>
+		<!-- The action line in the form tag (below) is just a temporary Perl program
+		     that echos back the user's choices from the form submission. 
+                     In a future lab, you will replace this with a PHP program that you create.
+		-->
+
+		<form method="post" action="http://ss1.ciwcertified.com/cgi-bin/process.pl">
+			<h1>
+				Zoo Volunteer Interest Form
+			</h1>
+			<br>
+			Enter Your Name:
+			<!-- Format for a text box that accepts 40 characters -->
+			<input
+				type="text"
+				name="name"
+				size="40"/>
+			<br>
+			Enter Your E-mail:
+			<input
+				type="text"
+				name="emailAddr"
+				size="40"/>
+			<br>
+			<br>
+			Should we add you to our mailing list?
+			<br>
+			<!-- Format for a set of radio buttons. All buttons MUST
+				have the same "name" but each choice should return
+				a different value -->
+			<input
+				type="radio"
+				name="mailButtons"
+				value="yes"/>
+			Yes
+			<input
+				type="radio"
+				name="mailButtons"
+				value="no"/>
+			No
+			<br>
+			<br>
+			What skills do you have that can help us at the Zoo? (check all that apply):
+			<br>
+			<table border="0">
+				<tr>
+					<td>
+						<!-- Format for check boxes. The named 
+						     variable will be set to "on" if selected or
+                                                     you may specify a value for each one.
+						 -->
+						<input
+							type="checkbox"
+							name="hasCarpentry"/>
+						Carpentry
+					</td>
+					<td>
+						<input
+							type="checkbox"
+							name="hasRetail"/>
+						Retail
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input
+							type="checkbox"
+							name="hasPlumbing"/>
+						Plumbing
+					</td>
+					<td>
+						<input
+							type="checkbox"
+							name="hasVeterinary"/>
+						Veterinary
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input
+							type="checkbox"
+							name="hasAccounting"/>
+						Accounting
+					</td>
+					<td>
+						<input
+							type="checkbox"
+							name="hasLandscaping"/>
+						Landscaping
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input
+							type="checkbox"
+							name="hasComputers"/>
+						Computers
+					</td>
+					<td>
+						<input
+							type="checkbox"
+							name="hasTeacher"/>
+						Teacher
+					</td>
+				</tr>
+			</table>
+			<br>
+			<br>
+			How often would you like to receive an e-mail from us?
+			<br>
+			<!-- Format for a drop down list, single select -->
+			<select
+				name="emailInterval">
+				<option>Once a week</option>
+				<option>Once a month</option>
+				<option>Once a year</option>
+				<option>Never</option>
+			</select>
+			<br>
+			<br>
+			Where would you like to work? (Choose all that apply)
+			<br>
+			<!-- Format for a drop down list, multi-select; Variable
+				jobChoices becomes an array  -->
+			<select
+				name="jobChoices[]"
+				size="4"
+				multiple="multiple">
+				<option>Office</option>
+				<option>Concessions</option>
+				<option>Souvenir Shop</option>
+				<option>Animal Exhibits</option>
+				<option>Database Admin</option>
+				<option>Security</option>
+			</select>
+			<br>
+			<br>
+			Additional Information:
+			<br>
+			<!-- Format for a multi-line text input box -->
+			<textarea
+				name="otherInfo"
+				rows="8"
+				cols="60">Please enter any additional information about yourself here!			</textarea>
+			<br>
+			<br>
+			<input
+				type="submit"
+				value="Submit Form"/>
+			<input
+				type="reset"
+				value="Reset"/>
+		</form>
+	</body>
+</html>
